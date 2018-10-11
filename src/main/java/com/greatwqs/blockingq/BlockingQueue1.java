@@ -1,4 +1,4 @@
-package com.greatwqs.lang.blocking;
+package com.greatwqs.blockingq;
 
 import java.util.LinkedList;
 import java.util.Queue;

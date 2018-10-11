@@ -1,4 +1,4 @@
-package com.greatwqs.lang.blocking;
+package com.greatwqs.blockingq;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -6,7 +6,7 @@ import java.util.Queue;
 /**
  * 
  * 两个 Object 的加锁注意顺序, 否则容易产生死锁
- *
+ * 
  * @author wangqingsong
  * @create 2018/9/28
  */

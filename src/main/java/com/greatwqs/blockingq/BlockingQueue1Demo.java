@@ -1,4 +1,4 @@
-package com.greatwqs.lang.blocking;
+package com.greatwqs.blockingq;
 
 import org.apache.log4j.Logger;
 

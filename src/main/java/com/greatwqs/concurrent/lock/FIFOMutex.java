@@ -5,6 +5,12 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.locks.LockSupport;
 
+/***
+ * 
+ * CAS + LockSupport 实现互斥锁
+ * @author wangqingsong
+ *
+ */
 class FIFOMutex {
 	private final AtomicBoolean locked = new AtomicBoolean(false);
 	private final Queue<Thread> waiters = new ConcurrentLinkedQueue<Thread>();
