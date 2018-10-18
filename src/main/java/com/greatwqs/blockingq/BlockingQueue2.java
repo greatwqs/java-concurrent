@@ -5,7 +5,12 @@ import java.util.Queue;
 
 /**
  * 
- * 两个 Object 的加锁注意顺序, 否则容易产生死锁
+ * 解决 BlockingQueue1 中不合理唤醒
+ * 
+ * 1. 两个 Object 的加锁注意顺序, 否则容易产生死锁
+ * 2. 嵌套 synchronized, 操作系统两把独占锁, 性能消耗大!
+ * 
+ * BlockingQueue1 和 BlockingQueue1中怎么再优化?
  * 
  * @author wangqingsong
  * @create 2018/9/28

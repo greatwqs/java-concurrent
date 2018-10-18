@@ -3,7 +3,10 @@ package com.greatwqs.lang;
 /***
  * 
  * 经典单例
- * volatile & synchronized 
+ * volatile & synchronized
+ * 
+ * 思考问题:
+ * 这里 volatile 如果去掉, 程序会出BUG吗?
  * 
  * @author wangqingsong
  *
