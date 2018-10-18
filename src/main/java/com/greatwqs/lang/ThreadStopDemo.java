@@ -3,7 +3,7 @@ package com.greatwqs.lang;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class TestStop {
+public class ThreadStopDemo {
 	private static final int[] array = new int[80000];
 	private static final Thread t = new Thread() {
 		public void run() {
