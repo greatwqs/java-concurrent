@@ -17,6 +17,7 @@ public class SingletonDemo {
 	private static volatile SingletonDemo instance;
 
 	private SingletonDemo() {
+
 	}
 
 	public static SingletonDemo getInstance() {
@@ -30,6 +31,7 @@ public class SingletonDemo {
 			}
 			
 			instance = new SingletonDemo(); // volatile
+			//
 			return instance;
 		}
 	}

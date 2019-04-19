@@ -38,20 +38,22 @@ public class ThreadJoinDemo {
 		}
 		System.out.println(threadName + " end!");
 	}
-}
 
-class SubThread extends Thread {
-	public void run() {
-		String threadName = Thread.currentThread().getName();
-		System.out.println(threadName + " start.");
-		try {
-			for (int i = 0; i < 5; i++) {
-				System.out.println(threadName + " sleep at " + i);
-				Thread.sleep(1000);
+	static class SubThread extends Thread {
+		public void run() {
+			String threadName = Thread.currentThread().getName();
+			System.out.println(threadName + " start.");
+			try {
+				for (int i = 0; i < 5; i++) {
+					System.out.println(threadName + " sleep at " + i);
+					Thread.sleep(1000);
+				}
+				System.out.println(threadName + " end.");
+			} catch (Exception e) {
+				System.out.println("Exception from " + threadName + ".run");
 			}
-			System.out.println(threadName + " end.");
-		} catch (Exception e) {
-			System.out.println("Exception from " + threadName + ".run");
 		}
 	}
 }
+
+

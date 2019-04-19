@@ -3,7 +3,9 @@ package com.greatwqs.concurrent.lock;
 import java.util.concurrent.locks.LockSupport;
 
 /***
- * 
+ *
+ * https://www.zybuluo.com/kiraSally/note/866972
+ *
  * LockSupport
  * @author wangqingsong
  *
@@ -20,4 +22,6 @@ public class LockSupportDemo {
 		LockSupport.park();
 		System.out.println("block.");
 	}
+
+
 }

@@ -40,9 +40,14 @@ public class ForkJoinDemo extends RecursiveTask<Long> {
 			System.out.println(String.format("compute %d~%d = %d", start, end, sum));
 			return sum;
 		}
+		
 		// 任务太大,一分为二:
-		int middle = (end + start) / 2;
+		int middle = (end + start) / 2; // 中分
 		System.out.println(String.format("split %d~%d ==> %d~%d, %d~%d", start, end, start, middle, middle, end));
+
+		/***
+		 * 两个任务分别计算结果, 最后再相加
+		 */
 		ForkJoinDemo subtask1 = new ForkJoinDemo(this.array, start, middle);
 		ForkJoinDemo subtask2 = new ForkJoinDemo(this.array, middle, end);
 		invokeAll(subtask1, subtask2);
@@ -57,11 +62,12 @@ public class ForkJoinDemo extends RecursiveTask<Long> {
 	    // 创建随机数组成的数组:
 	    long[] array = new long[400];
 	    fillRandom(array);
+
 	    // fork/join task:
-	    ForkJoinPool fjp = new ForkJoinPool(4); // 最大并发数4
+	    ForkJoinPool forkJoinPool = new ForkJoinPool(4); // 最大并发数4
 	    ForkJoinTask<Long> task = new ForkJoinDemo(array, 0, array.length);
 	    long startTime = System.currentTimeMillis();
-	    Long result = fjp.invoke(task);
+	    Long result = forkJoinPool.invoke(task);
 	    long endTime = System.currentTimeMillis();
 	    System.out.println("Fork/join sum: " + result + " in " + (endTime - startTime) + " ms.");
 	}
